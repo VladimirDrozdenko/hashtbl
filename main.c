@@ -1,12 +1,11 @@
 #include <assert.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-
 #include "map.h"
 
 
-int main() {
+void test_generic() {
+	printf("\n---TEST GENERIC---\n");
 	str2str_node* root = init_map("key3", "value3");
 
 	assert(add_node(&root, "key1", "value1"));
@@ -19,8 +18,6 @@ int main() {
 	assert(add_node(&root, "key4", "value4"));
 
 	assert(add_node(&root, "key5", "value5"));
-
-	//assert(get_height(root) == 4);
 
 	print_map(root);
 
@@ -43,4 +40,33 @@ int main() {
 	assert(!pval);
 
 	clear_map(root);
+}
+
+void test_rebalance() {
+	printf("\n---TEST REBALANCE---\n");
+	str2str_node* root = init_map("key1", "value1");
+
+	add_node(&root, "key2", "value2");
+	add_node(&root, "key3", "value3");
+	add_node(&root, "key4", "value4");
+	add_node(&root, "key5", "value5");
+	add_node(&root, "key6", "value6");
+	add_node(&root, "key7", "value7");
+
+	print_map(root);
+
+	printf("\nREBALANCING\n");
+
+	root = rebalance(root);
+
+	print_map(root);
+
+	clear_map(root);
+}
+
+int main() {
+	test_generic();
+
+	test_rebalance();
+
 }

@@ -8,11 +8,12 @@ typedef struct __str2str_node {
 	struct __str2str_node* left, *right;
 } str2str_node;
 
+
 extern str2str_node* init_map(const char* pk, const char* pval);
 extern void clear_map(str2str_node* proot);
 extern void print_map(const str2str_node* proot);
 extern int add_node(str2str_node** proot, const char* pk, const char* pval);
 extern const char* get_map_value(const str2str_node* proot, const char* pk);
-
+extern str2str_node* rebalance(str2str_node* proot);
 
 #endif //__MAP_H__
