@@ -44,14 +44,17 @@ void test_generic() {
 
 void test_rebalance() {
 	printf("\n---TEST REBALANCE---\n");
-	str2str_node* root = init_map("key1", "value1");
+	str2str_node* root = init_map("key01", "value01");
 
-	add_node(&root, "key2", "value2");
-	add_node(&root, "key3", "value3");
-	add_node(&root, "key4", "value4");
-	add_node(&root, "key5", "value5");
-	add_node(&root, "key6", "value6");
-	add_node(&root, "key7", "value7");
+	add_node(&root, "key02", "value2");
+	add_node(&root, "key03", "value3");
+	add_node(&root, "key04", "value4");
+	add_node(&root, "key05", "value5");
+	add_node(&root, "key06", "value6");
+	add_node(&root, "key07", "value7");
+	add_node(&root, "key08", "value8");
+	add_node(&root, "key09", "value9");
+	add_node(&root, "key10", "value10");
 
 	print_map(root);
 
